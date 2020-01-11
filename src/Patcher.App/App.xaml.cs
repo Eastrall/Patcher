@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿#if DEBUG
+using System.Threading;
+#endif
+
 using System.Windows;
 
 namespace Patcher.App
@@ -13,5 +11,11 @@ namespace Patcher.App
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+#if DEBUG
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+#endif
+        }
     }
 }

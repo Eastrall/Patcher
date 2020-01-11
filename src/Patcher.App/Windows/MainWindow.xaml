@@ -4,10 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Patcher.App"
+        xmlns:translation="clr-namespace:Patcher.App.Resources.Translations"
         mc:Ignorable="d"
-        Title="Patcher" Height="400" Width="380"
+        Title="Patcher" Height="350" Width="380"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
-    <Grid>
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
+        <Image Grid.Row="0" Source="pack://application:,,,/Patcher.App;component/Resources/Images/logo.png" Stretch="Uniform" />
+
+        <StackPanel Grid.Row="1">
+            
+            <!-- Progress label -->
+            <Label Content="Downloading X / Y"></Label>
+            <ProgressBar Height="23" />
+
+            <!-- Total progress -->
+            <Label Content="Total progress : 29%"/>
+            <ProgressBar Height="23" Value="29" />
+
+            <!-- Start button -->
+            <Button FontSize="16" Content="{x:Static translation:App.StartGame}"
+                    Margin="0,8,0,0">
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
